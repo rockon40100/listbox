@@ -1,0 +1,236 @@
+/*@charset "utf-8";*/
+/* CSS Document */
+
+/**
+ *  程式名稱：主架構CSS
+ *  作者：Sarah
+ *  版本：$Id: main.css,v 7.5 2018/05/30 11:48:00 Sarah Exp $：
+**/
+
+/*****reset*****/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	font-size:100%;
+	margin:0;
+	padding:0;
+}
+select,input,img,textarea {
+	vertical-align:middle;
+	outline:medium;
+}
+body:after {
+	clear:both;
+	content:""; 
+    display:block;
+}
+ol,ul,li {list-style:none;}
+
+
+/*****共用基本樣式*****/
+body,input,select,textarea {
+	font-family: Arial,"微軟正黑體","Microsoft JhengHei","新細明體","PMingLiU",sans-serif;
+	font-size:12px;
+}
+html,body,div,a,ol,ul,li,input,textarea,table,th,tr,td,span,label,aside,section,img,audio,video,iframe {
+			box-sizing:border-box; /* Opera/IE 8+ */
+	-webkit-box-sizing:border-box; /* Webkit */
+	   -moz-box-sizing:border-box; /* Firefox */
+}
+
+table {
+	width:100%;
+	border-collapse:collapse;
+	border:none;
+	table-layout:fixed;
+	text-align:center;
+	word-wrap:break-word;
+}
+
+
+/*****上移*****/
+.icon-sortup-btn {
+	background-image:url(svg/arrow-up-thick.svg);
+}
+.icon-sortup-btn:hover {
+	background-image:url(svg/arrow-up-thickHover.svg);
+}
+.icon-sortup-btn.disabled {
+	background-image:url(svg/arrow-up-thickDisabled.svg);
+	cursor:default;
+}
+
+/*****下移*****/
+.icon-sortdown-btn {
+	background-image:url(svg/arrow-down-thick.svg);
+}
+.icon-sortdown-btn:hover {
+	background-image:url(svg/arrow-down-thickHover.svg);
+}
+.icon-sortdown-btn.disabled {
+	background-image:url(svg/arrow-down-thickDisabled.svg);
+	cursor:default;
+}
+
+/*****菜籃式挑選*****/
+.listbox {
+	width:100%;
+	float:left;
+	display:table;
+	margin-top:55px;
+}
+.sourcebox,
+.targetbox {
+	width:40%;
+	border-width:1px;
+	border-style:solid;
+	display:table-cell;
+	line-height:15px;
+	vertical-align:top;
+	position:relative;
+}
+.sourcebox:before,
+.targetbox:before {
+	width:100%;
+	float:left;
+	content:attr(data-title);
+	font-size:14px;
+	font-weight:bold;
+	position:absolute;
+	top:-24px;
+	left:0;
+	text-align:center;
+}
+.put-btn-area,
+.move-btn {
+	width:10%;
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;
+}
+.listbox-style2 .put-btn {
+	margin-bottom:40px;
+}
+.listbox-style2 .put-btn:last-child {
+	margin-bottom:0;
+}
+.put-btn .icon-move-left,
+.put-btn .icon-move-right,
+.move-btn .icon-circle-up,
+.move-btn .icon-circle-down {
+	width:30px;
+	height:30px;
+	float:left;
+	background-position:center;
+	background-repeat:no-repeat;
+	cursor:pointer;
+	clear:both;
+	margin:8px calc((100% - 30px) / 2);
+}
+.put-btn .icon-move-right {
+	background-image:url(svg/move-right.svg);
+}
+.put-btn .icon-move-right:hover {
+	background-image:url(svg/move-rightHover.svg);
+}
+.put-btn .icon-move-right.disabled {
+	background-image:url(svg/move-rightDisabled.svg);
+	cursor:default;
+}
+.put-btn .icon-move-left {
+	background-image:url(svg/move-left.svg);
+}
+.put-btn .icon-move-left:hover {
+	background-image:url(svg/move-leftHover.svg);
+}
+.put-btn .icon-move-left.disabled {
+	background-image:url(svg/move-leftDisabled.svg);
+	cursor:default;
+}
+.move-btn .icon-circle-up {
+	background-image:url(svg/circle-up.svg);
+}
+.move-btn .icon-circle-up:hover {
+	background-image:url(svg/circle-upHover.svg);
+}
+.move-btn .icon-circle-up.disabled {
+	background-image:url(svg/circle-upDisabled.svg);
+	cursor:default;
+}
+.move-btn .icon-circle-down {
+	background-image:url(svg/circle-down.svg);
+}
+.move-btn .icon-circle-down:hover {
+	background-image:url(svg/circle-downHover.svg);
+}
+.move-btn .icon-circle-down.disabled {
+	background-image:url(svg/circle-downDisabled.svg);
+	cursor:default;
+}
+.targetbox-area {
+	width:60%;
+	display:table-cell;
+	line-height:15px;
+	vertical-align:top;
+	position:relative;
+}
+.targetbox-content {
+	width:100%;
+	float:left;
+	display:table;
+}
+.listbox-style1 .targetbox-content {
+	margin-bottom:5px;
+}
+.listbox-style1 .targetbox-content:last-child {
+	margin-bottom:0;
+}
+
+.sourcebox > div,
+.targetbox > div {
+	width:100%;
+	max-height:300px;
+	overflow:auto;
+}
+.target-row2 > div {
+	max-height:150px;
+}
+.target-row3 > div {
+	max-height:100px;
+}
+.lb-table {
+	float:left;
+	text-align:left;
+}
+.lb-table thead {
+	display:block;
+}
+.lb-table thead tr {
+	position:absolute;
+}
+.lb-table th {
+	border-right:1px solid #FFF;
+	font-weight:bold;
+	padding:5px;
+	text-align:center;
+}
+.lb-table th:last-child {
+	border-right:none;
+}
+.lb-table td {
+	padding:5px;
+}
+.lb-table td:first-child {
+	text-align:center;
+}
+

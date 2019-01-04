@@ -1,0 +1,30 @@
+
+.targetbox .lb-table thead th:nth-child(3),
+.targetbox .lb-table tbody td:nth-child(3) {
+	display:none;
+}
+
+.select_targetbox {
+	height:30px;
+	margin-top:-30px;
+	position:relative;
+}
+
+.class_select2 {
+	width:40%;
+	position:absolute;
+	right:10%;
+
+}
+
+
+@media screen and (max-width:768px) {
+	.select_targetbox {
+		margin-top:20px;
+	}
+	.class_select2 {
+		width:100%;
+		right:0%;
+		top:-60px;
+	}
+}
